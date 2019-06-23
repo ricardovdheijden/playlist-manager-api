@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
-public class HealthTest {
+class HealthResourceTest {
 
     @InjectMocks
-    private Health health;
+    private HealthResource healthResource;
 
     @Test
-    public void test_getHealth() {
-        Response response = health.getHealth();
+    void test_getHealth() {
+        Response response = healthResource.getHealth();
         ApiHealthStatus apiHealthStatus = (ApiHealthStatus) response.getEntity();
 
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus(), "Invalid status code");

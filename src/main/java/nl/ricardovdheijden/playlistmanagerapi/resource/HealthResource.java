@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 @Path("/health")
 @Component
-public class Health {
+public class HealthResource {
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON })
