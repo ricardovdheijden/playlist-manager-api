@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
+        register(CorsFilter.class);
         register(Health.class);
     }
 }

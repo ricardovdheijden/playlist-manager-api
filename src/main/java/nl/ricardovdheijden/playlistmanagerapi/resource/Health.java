@@ -1,7 +1,6 @@
 package nl.ricardovdheijden.playlistmanagerapi.resource;
 
 import nl.ricardovdheijden.playlistmanagerapi.models.ApiHealthStatus;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
@@ -14,9 +13,6 @@ import javax.ws.rs.core.Response;
 @Component
 public class Health {
 
-    @Value("${playlist-manager-api.allowed-origins}")
-    private String allowedOrigins;
-
     @GET
     @Produces({ MediaType.APPLICATION_JSON })
     public Response getHealth() {
@@ -27,7 +23,6 @@ public class Health {
 
         return Response.ok()
                 .entity(jsonResponse)
-                .header("Access-Control-Allow-Origin", allowedOrigins)
                 .build();
     }
 }
